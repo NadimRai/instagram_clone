@@ -14,6 +14,8 @@
 							by
 							= @pic.user.email
 
-= link_to "Back", root_path
-= link_to "Edit", edit_pic_path
-= link_to "Delete", pic_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"
+					.col.md-6
+						.btn-group.pull-right
+							- if user_signed_in?
+								= link_to "Fix Pic", edit_pic_path, class: "btn btn-info"
+								= link_to "Delete", pic_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"
